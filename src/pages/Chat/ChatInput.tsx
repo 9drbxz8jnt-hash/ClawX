@@ -802,6 +802,7 @@ export function ChatInput({ onSend, onStop, disabled = false, sending = false, i
             {skillTokenRanges.length > 0 && (
               <div
                 aria-hidden="true"
+                dir="auto"
                 className="pointer-events-none absolute inset-0 z-20 overflow-hidden whitespace-pre-wrap break-words text-sm leading-relaxed text-foreground"
               >
                 {renderHighlightedComposerText(input, skillTokenRanges, {
@@ -828,6 +829,7 @@ export function ChatInput({ onSend, onStop, disabled = false, sending = false, i
               onPaste={handlePaste}
               placeholder={inputDisabled ? t('composer.gatewayDisconnectedPlaceholder') : ''}
               disabled={inputDisabled}
+              dir="auto"
               data-testid="chat-composer-input"
               className={cn(
                 'relative min-h-[48px] max-h-[240px] resize-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none bg-transparent p-0 text-sm leading-relaxed placeholder:text-muted-foreground/60',
@@ -1119,7 +1121,7 @@ function AttachmentPreview({
         <div className="flex items-center gap-2 px-3 py-2 bg-muted/50 max-w-[200px]">
           <FileIcon mimeType={attachment.mimeType} className="h-5 w-5 shrink-0 text-muted-foreground" />
           <div className="min-w-0 overflow-hidden">
-            <p className="text-xs font-medium truncate">{attachment.fileName}</p>
+            <p dir="auto" className="text-xs font-medium truncate">{attachment.fileName}</p>
             <p className="text-2xs text-muted-foreground">
               {attachment.fileSize > 0 ? formatFileSize(attachment.fileSize) : '...'}
             </p>

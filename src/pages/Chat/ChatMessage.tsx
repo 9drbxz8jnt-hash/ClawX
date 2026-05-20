@@ -584,7 +584,7 @@ function UserMessageBubble({
 }) {
   return (
     <div className="relative rounded-2xl px-4 py-3 bg-brand text-white shadow-sm">
-      <p className="whitespace-pre-wrap break-words text-sm">{text}</p>
+      <p dir="auto" className="whitespace-pre-wrap break-words text-sm">{text}</p>
     </div>
   );
 }
@@ -599,7 +599,7 @@ function AssistantMarkdown({
   isStreaming: boolean;
 }) {
   return (
-    <div className="prose prose-sm dark:prose-invert w-full max-w-none break-words text-foreground">
+    <div dir="auto" className="prose prose-sm dark:prose-invert w-full max-w-none break-words text-foreground">
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[[rehypeKatex, { strict: false, throwOnError: false, output: 'html' }]]}
@@ -680,7 +680,7 @@ function FileCard({ file, onOpen }: { file: AttachedFileMeta; onOpen?: (file: At
     >
       <FileIcon mimeType={file.mimeType} className="h-5 w-5 shrink-0 text-muted-foreground" />
       <div className="min-w-0 overflow-hidden">
-        <p className="text-xs font-medium truncate">{file.fileName}</p>
+        <p dir="auto" className="text-xs font-medium truncate">{file.fileName}</p>
         <p className="text-2xs text-muted-foreground">
           {file.mimeType === DIRECTORY_MIME_TYPE ? '文件夹' : file.fileSize > 0 ? formatFileSize(file.fileSize) : 'File'}
         </p>

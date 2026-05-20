@@ -146,6 +146,7 @@ function StepDetailCard({ step }: { step: TaskStep }) {
             return (
               <div className="mt-3 rounded-lg border border-black/10 bg-black/[0.03] px-3 py-2 dark:border-white/10 dark:bg-white/[0.03]">
                 <pre
+                  dir="auto"
                   className="whitespace-pre-wrap break-words text-xs leading-5 text-muted-foreground"
                 >
                   {formatted}
@@ -156,6 +157,7 @@ function StepDetailCard({ step }: { step: TaskStep }) {
           {step.detail && expanded && canExpand && (isNarration || isThinking) && (
             <div className="mt-3 rounded-lg border border-black/10 bg-black/[0.03] px-3 py-2 dark:border-white/10 dark:bg-white/[0.03]">
               <pre
+                dir="auto"
                 className="whitespace-pre-wrap break-words text-xs leading-5 text-muted-foreground"
               >
                 {step.detail}

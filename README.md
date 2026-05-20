@@ -107,6 +107,7 @@ Communicate with AI agents through a modern chat experience. Support for multipl
 Skills you insert from the composer appear as `/skill-name` chips; click a chip to open the preview sidebar and read that skill's `SKILL.md`.
 When you target another agent with `@agent`, ClawX switches into that agent's own conversation context directly instead of relaying through the default agent. Agent workspaces stay separate by default, and stronger isolation depends on OpenClaw sandbox settings.
 Each agent can also override its own `provider/model` runtime setting; agents without overrides continue inheriting the global default model.
+Bidirectional text rendering is supported in chat messages and the composer: Arabic, Hebrew and other RTL scripts are detected per-message via `dir="auto"` and rendered in their natural direction, while the surrounding UI stays LTR.
 
 ### 📡 Multi-Channel Management
 Configure and monitor multiple AI channels simultaneously. Each channel operates independently, allowing you to run specialized agents for different tasks.
